@@ -4,6 +4,7 @@
 \usepackage{fullpage}
 \usepackage{amsmath}
 \usepackage[square]{natbib}
+\usepackage[toc]{appendix}
 
 
 \begin{document}
@@ -19,6 +20,8 @@
 %--------------------------ABSTRACT---------------------------%
 
 \newpage
+\pagenumbering{roman}
+
 \thispagestyle{empty}
 \vspace*{18pt}
 \begin{center}
@@ -29,6 +32,7 @@
   \textsc{Abstract}
 \end{center}
 
+This section of the page is where your abstract will go. Fill in this spot in the dissertation.tex file with your abstract. \textsc{Caleb} -- check and see if there is a character requirement for abstracts and put here if there is.
 
 \thispagestyle{empty}
 
@@ -60,10 +64,30 @@
 
 \subfile{acknowledgements}
 
+\tableofcontents
+
+%If there is no figures or tables, then remove the corresponding command to
+%delete the page from the pdf.
+\listoffigures
+\listoftables
+\clearpage
+
+\pagenumbering{arabic}
+
+
 \subfile{introduction}
 \subfile{related_work}
 \subfile{methodology}
 \subfile{experiments}
 \subfile{conclusion}
+
+\begin{appendices}
+  \subfile{appendices}
+\end{appendices}
+
+%-----------------------BIBLIOGRAPHY---------------------------%
+\newpage
+\bibliographystyle{plainnat}
+\bibliography{dissertation}
 
 \end{document}
