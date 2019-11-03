@@ -1,11 +1,61 @@
-\documentclass{article}
+\documentclass[12pt, notitlepage ]{report}
 
 \usepackage{subfiles}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage[square]{natbib}
 
-\title{Title}
-\author{Your Name}
+
 \begin{document}
-\maketitle{}
+
+%These will be predefined because the title and author are referenced numerous
+%times through out the document, so it is easiest to define them here. That way
+% if you change either of them, it will update throughout the document.
+
+\newcommand{\doctitle}{Your Dissertation Title Will Go Here}
+\newcommand{\docauthor}{Your Name Goes Here}
+
+
+%--------------------------ABSTRACT---------------------------%
+
+\newpage
+\thispagestyle{empty}
+\vspace*{18pt}
+\begin{center}
+  \textsc{\large{\doctitle}}\\[18pt]  % A little larger than the original template
+  by\\[18pt]
+  \textsc{\docauthor}\\[12pt]
+  (Under the Direction of [Prof's Name])\\[12pt]
+  \textsc{Abstract}
+\end{center}
+
+
+\thispagestyle{empty}
+
+\begin{list}{\textsc{Index words:\hfill}}{\labelwidth 1.2in\leftmargin 1.4in\labelsep 0.2in}
+  \item
+  \begin{flushleft}
+    [PUT YOUR LIST OF INDEX WORDS HERE SEPERATED BY COMMAS]
+  \end{flushleft}
+\end{list}
+
+
+%--------------------------TITLE PAGE---------------------------%
+\newpage
+
+
+
+
+%--------------------------COPYRIGHT---------------------------%
+\newpage
+
+
+
+%--------------------------APPROVAL---------------------------%
+\newpage
+
+
+
 
 
 \subfile{acknowledgements}
