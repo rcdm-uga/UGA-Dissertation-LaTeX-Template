@@ -3,10 +3,16 @@
 \usepackage{subfiles}
 \usepackage{fullpage}
 \usepackage{amsmath}
+\usepackage{sectsty}
+\usepackage{graphicx}
 \usepackage[square]{natbib}
 \usepackage[toc]{appendix}
+\usepackage{setspace}\doublespacing
+\usepackage{titlesec}
 
+\chapterfont{\centering\normalfont} %Centering Chapter Headers
 
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
 \begin{document}
 
 %These will be predefined because the title and author are referenced numerous
@@ -138,6 +144,7 @@ This section of the page is where your abstract will go. Fill in this spot in th
 
 %-----------------------BIBLIOGRAPHY---------------------------%
 \newpage
+\addcontentsline{toc}{chapter}{Bibliography} %add bib to the TOC
 \bibliographystyle{plainnat}
 \bibliography{dissertation}
 
