@@ -5,14 +5,14 @@
 \usepackage{amsmath}
 \usepackage{sectsty}
 \usepackage{graphicx}
-\usepackage[square]{natbib}
+\usepackage{lipsum}
+\usepackage[round,comma]{natbib}
 \usepackage[toc]{appendix}
 \usepackage{setspace}\doublespacing
 \usepackage{titlesec}
 
-\chapterfont{\centering\normalfont} %Centering Chapter Headers
+\chapterfont{\centering\normalfont\nohang\textsc} %Centering Chapter Headers
 
-\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
 \begin{document}
 
 %These will be predefined because the title and author are referenced numerous
@@ -31,14 +31,14 @@
 \thispagestyle{empty}
 \vspace*{18pt}
 \begin{center}
-  \textsc{\large{\doctitle}}\\[18pt]  % A little larger than the original template
+  \textsc{\Large{\doctitle}}\\[18pt]  % A little larger than the original template
   by\\[18pt]
-  \textsc{\docauthor}\\[12pt]
+  \textsc{\Large\docauthor}\\[12pt]
   (Under the Direction of [Prof's Name] (No Dr. or PhD))\\[12pt]
   \textsc{Abstract}
 \end{center}
 
-This section of the page is where your abstract will go. Fill in this spot in the dissertation.tex file with your abstract. Doctorial 350 words max
+This section of the page is where your abstract will go. Fill in this spot in the dissertation.tex file with your abstract. Doctorial 350 words max, 150 max for masters.
 
 \thispagestyle{empty}
 
@@ -132,10 +132,10 @@ This section of the page is where your abstract will go. Fill in this spot in th
 \pagenumbering{arabic}
 
 
-\subfile{introduction}
-\subfile{related_work}
-\subfile{methodology}
-\subfile{experiments}
+\subfile{chapter1}
+\subfile{chapter2}
+\subfile{chapter3}
+\subfile{chapter4}
 \subfile{conclusion}
 
 \begin{appendices}

@@ -1,13 +1,31 @@
 \documentclass[./dissertation.tex]{subfiles}
 \begin{document}
-    \chapter{Introduction}
-    This is where your Introduction will go. There will be examples of figures, tables, citations, and footnotes in this section. In the source files, there will be examples and how to get them to appear on the TOC, LOF, and LOTs.
+
+    \chapter{Enter Title Here}
+    This is where your Introduction will go. There will be examples of figures, tables, citations, and footnotes in this section. In the source files, there will be examples and how to get them to appear on the TOC, LOF, and LOTs Some Diciplines use section and subsection headings more than others. The Chapter one is really all that matters. This is strictly to give the reader a sence of how they look on the TOC.
     \section{Your first section}
       How do you feel so far? In these next few subsections we are going to be illustrating how to do these different things in LaTeX. Hopefully you will be able to replicate it whenever you need them.
       It is good to have all of you images (figures) in their own folder so you can keep some organization to your projects.
 
       \subsection{Table Example}
       In this subsection, we are going to give an example of a table and how one will look. There are many ways to make a table and customize them. Here is one example:
+
+
+      \begin{table}[h]
+        \centering
+      \begin{tabular}[c]{|l|c|rc|}
+        \hline
+        left justified  & centerd  & right justified  & no left border\\
+        \hline
+        row 1 & fill & in between & the \&s\\
+        row 2 & & &\\
+        \hline
+
+
+      \end{tabular}
+      \caption{The Caption of the table.}
+      \label{table:someLabel}
+      \end{table}
 
 
 
@@ -23,5 +41,5 @@
       \subsection{Equation Example}
 
       \subsection{Citation Example}
-      You will need to be very familar with this command and how it works. In this article, we see that \citet{article1} has stumbled upon something that can change the world. 
+      You will need to be very familar with this command and how it works. In this article, we see that \cite{article1} has stumbled upon something that can change the world.
 \end{document}
