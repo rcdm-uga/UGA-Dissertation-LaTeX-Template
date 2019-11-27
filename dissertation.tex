@@ -45,13 +45,16 @@ This section of the page is where your abstract will go. Fill in this spot in th
 
 %--------------------------TITLE PAGE---------------------------%
 \newpage
+\thispagestyle{empty}
 \vspace*{18pt}
 \begin{center}
   \textsc{\doctitle}\\[18pt]
   by\\[12pt]
   \textsc{\docauthor}\\[8pt]
-  List only currently obtained degrees in the format of Degree, Institution,Year.\\
-  If degree was obtained outside of the US, the country of the school and date obtained will need to be provided. i.e. B.S., University of Georgia, 2018
+  B.S., University of Georgia, 2018\\
+  Enter only degrees already completed. Follow example above\\
+  If degree was obtained outside of the US, the country \\
+  of the school and date obtained will need to be provided.
 
   \vfill
   A [Dissertation or Thesis? (Pick One)] Submitted to the Graduate Faculty of the\\ University of Georgia in Partial Fulfillment of the Requirements for the Degree.\\ [18pt]
@@ -75,18 +78,48 @@ This section of the page is where your abstract will go. Fill in this spot in th
 
 %--------------------------APPROVAL---------------------------%
 \newpage
+\thispagestyle{empty}
+\vspace*{18pt}
+\begin{center}
+  \textsc{\doctitle}\\[18pt]
+  by\\[18pt]
+  \textsc{\docauthor}
+\end{center}
+\vfill
+
+\begin{flushright}
+  \begin{tabular}{ll}
+    Major Professor: & Major Prof \\ [8pt]
+    Committee: & Prof 1 \\
+    & Prof 2 \\
+    & Prof 3 \\
+  \end{tabular}
+\end{flushright}
+
+\vspace*{3cm}
+
+\begin{flushleft}
+  Electronic Version Approved:\\[12pt]
+  Suzanne Barbour\\
+  Dean of the Graduate School\\
+  The University of Georgia\\
+  Month Year
+\end{flushleft}
+\vspace*{1.5cm}
 
 
 
 
-
+\subfile{dedication}
 \subfile{acknowledgements}
 
 \tableofcontents
 
 %If there is no figures or tables, then remove the corresponding command to
 %delete the page from the pdf.
+\addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
+\addcontentsline{toc}{chapter}{\listtablename}
 \listoftables
 \clearpage
 
