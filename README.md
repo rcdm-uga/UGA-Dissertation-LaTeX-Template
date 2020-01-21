@@ -22,4 +22,7 @@ This by far is the easiest way to use LaTeX. Just make an account with Overleaf 
   * In Atom, it's a keyboard shortcut. For a Mac its CMD+Option+B to build the pdf. Windows and other operating systems will be similar.
   * If you are familiar with the command line, then once you have completed the first step, then check out the manual page `$ man pdflatex` to get started.
 
-### How to Compile this dissertation
+## How to Compile this Dissertation
+This TeX project uses the package called [subfiles](https://www.overleaf.com/learn/latex/Multi-file_LaTeX_projects). This allows for the different tex files to be compiled all together without having to compile them all individually. You will only have to compile the main file, which is the 'dissertation.tex' in this case.
+  * If you are using atom, then just make sure the cursor is anywhere in the dissertation.tex file before hitting the keyboard shortcut. If you you compile chapter 1 page, then you will only see the contents of chapter 1. This is easy to do, so just be aware.
+  * This has not been implemented yet, but there will be a bash file that can be run to compile everything for you. Once that is implemented, the instructions will be included below.
