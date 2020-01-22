@@ -1,5 +1,12 @@
 # UGA-Dissertation-LaTeX-Template
-A dissertation LaTeX template pending approval by the UGA Graduate School.
+A dissertation template in LaTeX pending approval by the UGA Graduate School.
+
+The goal of this repository is to cut out all of the hard work of using LaTeX so that one could easily write their dissertation/thesis using this. Here is a list as to why this template is useful:
+  *  Produces really nice foot notes and side notes
+  * Automatically adds to the Table of Contents, List of Figures, and the List of Tables
+  * Automatically organizes the bibliography and citations
+  * __The Front Matter Pages are done fore you!!__
+
 
 ## Getting LaTeX Up and Running
 We want to give some options such that you can be editing this Template as __fast__ as possible. There are many different ways to run and compile these TeX files. Below will be a list of the options and how to get them set up.
