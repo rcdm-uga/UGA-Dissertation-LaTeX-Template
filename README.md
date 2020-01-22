@@ -36,7 +36,7 @@ This TeX project uses the package called [subfiles](https://www.overleaf.com/lea
   * This has not been implemented yet, but there will be a bash file that can be run to compile everything for you. Once that is implemented, the instructions will be included below.
 
 
-## [Sample Pages](/images/sample_pages.pdf
+## [Sample Pages](/images/sample_pages.pdf)
 This pdf contains about a dozen pages from an actual UGA dissertation which implements this template. The pages illustrate the following:
    * A table of contents page. This was automatically generated in LaTeX. 
    * A blank page and the first page of a chapter.
