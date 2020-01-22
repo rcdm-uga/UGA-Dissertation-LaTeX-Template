@@ -46,4 +46,5 @@ This pdf contains about a dozen pages from an actual UGA dissertation which impl
    * Some images are very tall and narrow. Rather than using an entire page for them, they can be fit within the footnote margin instead. Page 52 illustrates what this may look like. 
    * Alternatively, sometimes a very small image is all that is needed to illustrate a point. Page 145 shows that these small images can be embedded within the footnotes themselves. 
    * Finally, the last page is a sample bibliography. Note that this was automatically generated in LaTeX.
+
 Note that these sample pages implement design choices that have not yet been implemented in this template, such as font choices, page margins, line height, and other typographical elements. 
