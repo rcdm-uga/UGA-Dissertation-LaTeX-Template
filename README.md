@@ -2,10 +2,11 @@
 A dissertation template in LaTeX pending approval by the UGA Graduate School.
 
 The goal of this repository is to cut out all of the hard work of using LaTeX so that one could easily write their dissertation/thesis using this. Here is a list as to why this template is useful:
-  *  Produces really nice foot notes and side notes
+  * Produces really nice footnotes and sidenotes
   * Automatically adds to the Table of Contents, List of Figures, and the List of Tables
   * Automatically organizes the bibliography and citations
   * __The Front Matter Pages are done fore you!!__
+These [sample pages](/figures/sample_pages.pdf) are from an acutual UGA dissertation that uses this template. For more details, see below.
 
 
 ## Getting LaTeX Up and Running
@@ -33,3 +34,16 @@ This by far is the easiest way to use LaTeX. Just make an account with Overleaf 
 This TeX project uses the package called [subfiles](https://www.overleaf.com/learn/latex/Multi-file_LaTeX_projects). This allows for the different tex files to be compiled all together without having to compile them all individually. You will only have to compile the main file, which is the 'dissertation.tex' in this case.
   * If you are using atom, then just make sure the cursor is anywhere in the dissertation.tex file before hitting the keyboard shortcut. If you you compile chapter 1 page, then you will only see the contents of chapter 1. This is easy to do, so just be aware.
   * This has not been implemented yet, but there will be a bash file that can be run to compile everything for you. Once that is implemented, the instructions will be included below.
+
+
+## [Sample Pages](/images/sample_pages.pdf
+This pdf contains about a dozen pages from an actual UGA dissertation which implements this template. The pages illustrate the following:
+   * A table of contents page. This was automatically generated in LaTeX. 
+   * A blank page and the first page of a chapter.
+   * A pair of "normal" pages. This is what the bulk of the dissertation may look like. It also illustrates the header and subheader. 
+   * This template will have the option to implement "Sidenotes" instead of footnotes. The next page illustrates what these look like. Page 12 shows that you can fill the entire outer margin with many footnotes, and it'll place them correctly. Page 13 shows what a more typical page, one with just a single footnote, may look like. Note: sidenotes have not yet been implemented in this template.
+   * While some images may be placed comfortably within the main body text page, sometimes, a full-width image is desired. Page 56 shows what that may look like. It is useful to have the option of full-width images since the main body width is a little narrower than normal. (The next page, 55, is just a filler for when you view two pages of the PDF at once.)
+   * Some images are very tall and narrow. Rather than using an entire page for them, they can be fit within the footnote margin instead. Page 52 illustrates what this may look like. 
+   * Alternatively, sometimes a very small image is all that is needed to illustrate a point. Page 145 shows that these small images can be embedded within the footnotes themselves. 
+   * Finally, the last page is a sample bibliography. Note that this was automatically generated in LaTeX.
+Note that these sample pages implement design choices that have not yet been implemented in this template, such as font choices, page margins, line height, and other typographical elements. 
