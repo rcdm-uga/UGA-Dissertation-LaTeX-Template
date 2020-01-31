@@ -26,7 +26,7 @@ This by far is the easiest way to use LaTeX. Just make an account with Overleaf 
 
   * [Atom](atom.io) is a good editor to use. You can follow along with this tutorial to get you set up with using atom. (If you are not using a Mac, you can still follow along, just make sure you completed step one above.) [Creating Your First PDF with LaTeX and Atom](http://economistry.com/2016/02/create-first-pdf-latex-atom-mac/). If you already completed step one here, then you have already completed the first step in the tutorial. I will say that you __don't__ have to download the skim pdf viewer application (step 3), you can install an additional package in atom called 'pdf-view'. TeX already requires you download all of these things, so if you don't want to download another application, then viewing it inside of atom will suffice. The only thing is you will get a red warning message every time you compile because atom is expecting to open skim. This warning message is nothing to worry about, but it can just get annoying.
 
-  *  [TeXmaker](https://www.xm1math.net/texmaker/) is also a good editor to use. 
+  *  [TeXmaker](https://www.xm1math.net/texmaker/) is also a good editor to use.
 
 3. Compiling TeX Files
   * Most TeX editors have a 'Run' button or something that will compile your files into pdfs.
@@ -37,6 +37,12 @@ This by far is the easiest way to use LaTeX. Just make an account with Overleaf 
 This TeX project uses the package called [subfiles](https://www.overleaf.com/learn/latex/Multi-file_LaTeX_projects). This allows for the different tex files to be compiled all together without having to compile them all individually. You will only have to compile the main file, which is the 'dissertation.tex' in this case.
   * If you are using atom, then just make sure the cursor is anywhere in the dissertation.tex file before hitting the keyboard shortcut. If you you compile chapter 1 page, then you will only see the contents of chapter 1. This is easy to do, so just be aware.
   * This has not been implemented yet, but there will be a bash file that can be run to compile everything for you. Once that is implemented, the instructions will be included below.
+
+Regardless, you will have to compile 4 times to get all the citations and references to be correct. The order of compilation will be:
+  1. dissertation.tex
+  2. dissertation.bib
+  3. dissertation.tex
+  4. dissertation.tex 
 
 
 ## [Sample Pages](/images/sample_pages.pdf)
