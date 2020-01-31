@@ -6,8 +6,8 @@ The goal of this repository is to cut out all of the hard work of using LaTeX so
   * Automatically adds to the Table of Contents, List of Figures, and the List of Tables
   * Automatically organizes the bibliography and citations
   * __The Front Matter Pages are done fore you!!__
-  
-These [sample pages](/figures/sample_pages.pdf) are from an acutual UGA dissertation that uses this template. For more details, see below.
+
+These [sample pages](/figures/sample_pages.pdf) are from an actual UGA dissertation that uses this template. For more details, see below.
 
 
 ## Getting LaTeX Up and Running
@@ -25,6 +25,8 @@ This by far is the easiest way to use LaTeX. Just make an account with Overleaf 
   * In the first step, a TeX editor maybe install when you install LaTeX. If thats the case, give it a try and see if you like it. For Example, if you installed TeX for a Windows computer then TeXworks is already installed. Check out and see what all was downloaded when you installed LaTeX from the previous step. Look up how to use it because there are a lot of different editors.
 
   * [Atom](atom.io) is a good editor to use. You can follow along with this tutorial to get you set up with using atom. (If you are not using a Mac, you can still follow along, just make sure you completed step one above.) [Creating Your First PDF with LaTeX and Atom](http://economistry.com/2016/02/create-first-pdf-latex-atom-mac/). If you already completed step one here, then you have already completed the first step in the tutorial. I will say that you __don't__ have to download the skim pdf viewer application (step 3), you can install an additional package in atom called 'pdf-view'. TeX already requires you download all of these things, so if you don't want to download another application, then viewing it inside of atom will suffice. The only thing is you will get a red warning message every time you compile because atom is expecting to open skim. This warning message is nothing to worry about, but it can just get annoying.
+
+  *  [TeXmaker](https://www.xm1math.net/texmaker/) is also a good editor to use. 
 
 3. Compiling TeX Files
   * Most TeX editors have a 'Run' button or something that will compile your files into pdfs.
