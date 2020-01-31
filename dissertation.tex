@@ -1,14 +1,14 @@
-\documentclass[12pt, notitlepage ]{report}
-
+\documentclass[12pt, notitlepage]{report} %Update the font size here
+                                          %Leave notitlepage there
 \usepackage{subfiles}
-\usepackage{fullpage}
+\usepackage{fullpage}                     %Should I use the geometry package?
 \usepackage{amsmath}
-\usepackage{sectsty}
+\usepackage{sectsty}                      %Used to change the Chapter font
 \usepackage{graphicx}
-\usepackage{lipsum}
-\usepackage[round,comma]{natbib}
-\usepackage[toc]{appendix}
-\usepackage{setspace}\doublespacing
+\usepackage{lipsum}                       %Used for the filler text, can delete
+\usepackage[round,comma]{natbib}          %Customize the in text citations
+\usepackage[toc]{appendix}                %creates the Table of Contents
+\usepackage{setspace}\doublespacing       %Sets the spacing
 \usepackage{titlesec}
 
 \chapterfont{\centering\normalfont\nohang\textsc} %Centering Chapter Headers
@@ -21,6 +21,17 @@
 
 \newcommand{\doctitle}{Your Dissertation Title Will Go Here}
 \newcommand{\docauthor}{Your Name Goes Here}
+
+%There are only a few places that you should touch in this dissertation.tex file.
+%The preamble
+%Setting your Title and Name  right above
+%Adding your Major Professor's name to the abstract page
+%Your ABSTRACT and the list of index words
+%The List of degrees already completed on title page
+%Pick the appropriate words at the bottom of the title page
+%Update Committe and Date on Approval page
+
+%Everything else should be done in the other .tex files. 
 
 
 %--------------------------ABSTRACT---------------------------%
