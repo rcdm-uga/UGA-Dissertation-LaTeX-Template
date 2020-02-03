@@ -1,7 +1,8 @@
-\documentclass[12pt, notitlepage]{report} %Update the font size here
+\documentclass[12pt, notitlepage, twoside]{report} %Update the font size here
                                           %Leave notitlepage there
 \usepackage{subfiles}
-\usepackage{fullpage}                     %Should I use the geometry package?
+%\usepackage{fullpage}                     %Should I use the geometry package?
+\usepackage{geometry}
 \usepackage{amsmath}
 \usepackage{sectsty}                      %Used to change the Chapter font
 \usepackage{graphicx}
@@ -12,6 +13,61 @@
 \usepackage{titlesec}
 \usepackage{csquotes}
 \usepackage{hyperref}
+
+
+% Use this geometry for the frontmatter
+\geometry{paperwidth=8.5in,
+          paperheight=11in,
+          left=1in,
+          right=1in,
+          top=1in,
+          bottom=1.25in}
+
+% Overall typography and aesthetics --------------------
+
+% Not double-spaced.
+\usepackage{setspace}
+  \setstretch{1.1}
+  \textfloatsep 0.75in
+
+% Better font
+\usepackage[T1]{fontenc}
+\usepackage[osf]{ebgaramond}
+
+% Makes widows and orphans illegal.
+\usepackage[all]{nowidow}
+% This prevents unwanted spaces between paragraphs
+\raggedbottom
+
+% Word spacing and letter spacing
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+% activate={true,nocompatibility} - activate protrusion and expansion
+% final - enable microtype; use "draft" to disable
+% tracking=true, kerning=true, spacing=true - activate these techniques
+% factor=1100 - add 10% to the protrusion amount (default is 1000)
+% stretch=10, shrink=10 - reduce stretchability/shrinkability (default is 20/20)
+% See http://www.khirevich.com/latex/microtype/
+\microtypecontext{spacing=nonfrench} % suppresses some warnings
+
+% End typography ----------------------------------------
+
+
+
+% Create a new boolean variable to toggle between footnotes and sidenotes
+\newif\ifsidenote
+\sidenotetrue
+
+% If you want sidenotes, we'll load some additional packages. Nothing for you to worry about.
+\ifsidenote
+  \usepackage{marginfix}
+  \usepackage{sidenotes}
+  \usepackage{ragged2e} % A better version of \raggedright and will prevent overly short lines in sidenotes: https://texfaq.org/FAQ-ragright
+  \renewcommand{\footnote}[1]{\sidenote{\RaggedRight\footnotesize #1}}
+  \renewcommand{\footnotetext}[1]{\sidenotetext{\raggedright\footnotesize #1}}
+\fi
+
+
+
 
 \chapterfont{\centering\normalfont\nohang\textsc} %Centering Chapter Headers
 
@@ -146,6 +202,32 @@ This section of the page is where your abstract will go. Fill in this spot in th
 
 \pagenumbering{arabic}
 
+
+% If you want SIDENOTES instead of footnotes
+\ifsidenote
+
+  % We'll now switch to the sidenote layout.
+  \newgeometry{
+    paperheight = 11in,
+    paperwidth = 8.5in,
+    includemp = true,
+    top = 1in,
+    bottom = 1.25in,
+    bindingoffset = 0.25in,
+    inner = 1in,
+    marginparsep = 0.125in,
+    marginparwidth = 1.5in,
+    outer = 0.75in
+  }
+
+  % The footnote command now produces sidenotes.
+  \renewcommand{\footnote}[1]{\sidenote{\RaggedRight\footnotesize #1}}
+  \renewcommand{\footnotetext}[1]{\sidenotetext{\raggedright\footnotesize #1}}
+
+% If you want FOOTNOTES instead of sidenotes.
+\else
+  % Do nothing. We're all good.
+\fi
 
 \subfile{chapter1}
 \subfile{chapter2}
