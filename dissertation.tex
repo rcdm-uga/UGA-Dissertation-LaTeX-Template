@@ -1,13 +1,14 @@
 \documentclass[12pt, notitlepage, twoside]{report} %Update the font size here
                                           %Leave notitlepage there
 \usepackage{subfiles}
-%\usepackage{fullpage}                     %Should I use the geometry package?
 \usepackage{geometry}
 \usepackage{amsmath}
 \usepackage{sectsty}                      %Used to change the Chapter font
 \usepackage{graphicx}
-\usepackage{lipsum}                       %Used for the filler text, can delete
-\usepackage[round,comma]{natbib}          %Customize the in text citations
+\usepackage{lipsum}
+\usepackage[spanish,english]{babel}                   %Used for the filler text, can delete
+\usepackage[utf8]{inputenc}
+\usepackage[backend=biber,style=apa,sorting=nyt]{biblatex}
 \usepackage[toc]{appendix}                %creates the Table of Contents
 \usepackage{setspace}\doublespacing       %Sets the spacing
 \usepackage{titlesec}
@@ -67,7 +68,7 @@
 \fi
 
 
-
+\addbibresource{dissertation.bib}
 
 \chapterfont{\centering\normalfont\nohang\textsc} %Centering Chapter Headers
 
@@ -84,6 +85,7 @@
 %---------------WHAT TO CHANGE IN THIS FILE -------------------%
 %There are only a few places that you should touch in this dissertation.tex file.
 %The preamble
+%Setting the geometry parameters
 %Setting your Title and Name  right above
 %Adding your Major Professor's name to the abstract page
 %Your ABSTRACT and the list of index words
@@ -242,7 +244,6 @@ This section of the page is where your abstract will go. Fill in this spot in th
 %-----------------------BIBLIOGRAPHY---------------------------%
 \newpage
 \addcontentsline{toc}{chapter}{Bibliography} %add bib to the TOC
-\bibliographystyle{plainnat}
-\bibliography{dissertation}
+\printbibliography[title={Bibliography}]
 
 \end{document}
