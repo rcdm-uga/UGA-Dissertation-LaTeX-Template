@@ -2,9 +2,22 @@
 \begin{document}
     \chapter{All about Citations and BibTex}
     Before diving into BibTex and how it all works, citing a figure or table that does not exist in the same subpage is also possible. Figure ~\ref{fig:digilogo} is on page ~\pageref{fig:digilogo}.
-    \section{Works Cited Stlying}
-      \subsection{BibTex Formatting}
-        \parencite{article1}
-        \parencite{article2}
+    \section{The Bibliography}
+      In this section, we are going to dive into how LaTeX automates your citations and generates your bibliography on the fly. That way if you make any additions or deletions, LaTeX will handle all of that.
+      \subsection{BibTex File Formatting}
+        All of the citations will live in one file, in this case is called dissertation.bib. This file will have to follow a specific format. Each entry will start with an @ and following the type of entry. If it is a book, then it will start with @book\{...\}. Inside the brackets will contain all of the information about this entry. Fisrt it will have an ID that you will use to cite inside the tex files. Not sure of a convention, but each ID must be unique so something that pertains to the entry should suffice. There is a lot you can put with each entry, so \href{https://www2.cs.arizona.edu/~collberg/Teaching/07.231/BibTeX/bibtex.html}{here} is a link to all the different types and the different attributes each entry can have. Each attribute inside the curly brackets needs to be separated by a comma, but each entry just needs to be on its own line and not separated by a comma.
+      \subsection{Loading BibTex File}
+        If you look at the main file, \textit{disseration.tex}, there are two places that involve the bibliography. First is at the top where the command is \verb+\usepackage[backend=biber,style=apa,sorting=nyt]{biblatex}+. This lets you change the style and how the bibliography is sorted. Don't touch the \textit{backend=biber}. The next command is \verb+\addbibresource{dissertation.bib}+ further down before the actual document begins. This does not neet to be touched because it also needs to be called the same as the main file, besides the extention. This is how the compiler knows which file to grab.
+
+        Then lets take a look at the very bottom of \textit{dissertation.tex}, there will be two commands that are very important.
+        \begin{verbatim}
+          \addcontentsline{toc}{chapter}{Bibliography}
+          \printbibliography[title={Bibliography}]
+        \end{verbatim}
+        Unless you want to change the title of the bibliography or sort the bibliography, then you may want to touch this. Other than that, there is no need to mess with these two lines of the file.
+
     \section{Inline Citations}
+    There are two commands that you will need to know. \verb+\cite & \perencite+. The way these are used is when you use these commands, you need to have provide the ID of the specific entry in the bib file. \verb+\cite{article1}+ produces \cite{article1} where as the other command adds parentheses around it. These will change when you change the style of the Bibliography from apa to mla or any other format. 
+    \parencite{article1}
+    \parencite{article2}
 \end{document}
