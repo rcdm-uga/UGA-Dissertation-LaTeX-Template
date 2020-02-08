@@ -1,76 +1,12 @@
-\documentclass[12pt, notitlepage, twoside]{report} %Update the font size here
-                                          %Leave notitlepage there
-\usepackage{subfiles}
-\usepackage{geometry}
-\usepackage{amsmath}
-\usepackage{sectsty}                      %Used to change the Chapter font
-\usepackage{graphicx}
-\usepackage{lipsum}
-\usepackage[spanish,english]{babel}                   %Used for the filler text, can delete
-\usepackage[utf8]{inputenc}
-\usepackage[backend=biber,style=apa,sorting=nyt]{biblatex}
-\usepackage[toc]{appendix}                %creates the Table of Contents
-\usepackage{setspace}%\doublespacing       %Sets the spacing
-\usepackage{titlesec}
-\usepackage{csquotes}
-\usepackage{hyperref}
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex
+% arara: pdflatex
 
+\documentclass[12pt, notitlepage, twoside]{report}
 
-% Use this geometry for the frontmatter
-\geometry{width=8.5in,
-          height=11in,
-          left=1in,
-          right=1in,
-          top=1in,
-          bottom=1.25in}
-
-% Overall typography and aesthetics --------------------
-
-% Not double-spaced.
-  \setstretch{1.1}
-  \textfloatsep 0.75in
-
-% Better font
-\usepackage[T1]{fontenc}
-\usepackage[osf]{ebgaramond}
-
-% Makes widows and orphans illegal.
-\usepackage[all]{nowidow}
-% This prevents unwanted spaces between paragraphs
-\raggedbottom
-
-% Word spacing and letter spacing
-\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
-% activate={true,nocompatibility} - activate protrusion and expansion
-% final - enable microtype; use "draft" to disable
-% tracking=true, kerning=true, spacing=true - activate these techniques
-% factor=1100 - add 10% to the protrusion amount (default is 1000)
-% stretch=10, shrink=10 - reduce stretchability/shrinkability (default is 20/20)
-% See http://www.khirevich.com/latex/microtype/
-\microtypecontext{spacing=nonfrench} % suppresses some warnings
-
-% End typography ----------------------------------------
-
-
-
-% Create a new boolean variable to toggle between footnotes and sidenotes
-\newif\ifsidenote
-\sidenotetrue
-%\sidenotefalse
-
-% If you want sidenotes, we'll load some additional packages. Nothing for you to worry about.
-\ifsidenote
-  \usepackage{marginfix}
-  \usepackage{sidenotes}
-  \usepackage{ragged2e} % A better version of \raggedright and will prevent overly short lines in sidenotes: https://texfaq.org/FAQ-ragright
-  \renewcommand{\footnote}[1]{\sidenote{\RaggedRight\footnotesize #1}}
-  \renewcommand{\footnotetext}[1]{\sidenotetext{\raggedright\footnotesize #1}}
-\fi
-
-
-\addbibresource{dissertation.bib}
-
-\chapterfont{\centering\normalfont\nohang\textsc} %Centering Chapter Headers
+\input{metafiles/preamble.tex}    % Template packages are declared here
+\input{metafiles/structure.tex}   % Template structure is defined here
 
 \begin{document}
 
@@ -78,10 +14,11 @@
 %times through out the document, so it is easiest to define them here. That way
 % if you change either of them, it will update throughout the document.
 
+% NOTE This is not how this should be implemented
 \newcommand{\doctitle}{Your Dissertation Title Will Go Here}
 \newcommand{\docauthor}{Your Name Goes Here}
 
-
+% NOTE Rework this
 %---------------WHAT TO CHANGE IN THIS FILE -------------------%
 %There are only a few places that you should touch in this dissertation.tex file.
 %The preamble
@@ -97,7 +34,6 @@
 
 
 %--------------------------ABSTRACT---------------------------%
-
 \newpage
 
 \thispagestyle{empty}
@@ -186,12 +122,13 @@ This section of the page is where your abstract will go. Fill in this spot in th
 \end{flushleft}
 \vspace*{1.5cm}
 
+% Dedication ============================================================== %
+\subfile{subfiles/dedication}
 
+% Acknowledgements ======================================================== %
+\subfile{subfiles/acknowledgements}
 
-
-\subfile{dedication}
-\subfile{acknowledgements}
-
+% Table of Contents ======================================================= %
 \tableofcontents
 
 %If there is no figures or tables, then remove the corresponding command to
@@ -203,7 +140,6 @@ This section of the page is where your abstract will go. Fill in this spot in th
 \clearpage
 
 \pagenumbering{arabic}
-
 
 % If you want SIDENOTES instead of footnotes
 \ifsidenote
@@ -231,14 +167,18 @@ This section of the page is where your abstract will go. Fill in this spot in th
   % Do nothing. We're all good.
 \fi
 
-\subfile{chapter1}
-\subfile{chapter2}
-\subfile{chapter3}
-\subfile{chapter4}
-\subfile{conclusion}
+% Document Body =========================================================== %
+% ------------------------------------------------------------------------- %
+\subfile{subfiles/chapter1}
+\subfile{subfiles/chapter2}
+\subfile{subfiles/chapter3}
+\subfile{subfiles/chapter4}
+\subfile{subfiles/conclusion}
+% ------------------------------------------------------------------------- %
+% ========================================================================= %
 
 \begin{appendices}
-  \subfile{appendices}
+  \subfile{subfiles/appendices}
 \end{appendices}
 
 %-----------------------BIBLIOGRAPHY---------------------------%
