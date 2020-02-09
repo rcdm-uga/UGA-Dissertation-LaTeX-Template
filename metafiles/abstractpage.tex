@@ -1,0 +1,24 @@
+\newcommand{\makeabstract}[1]{%
+\begingroup
+\newpage
+
+\thispagestyle{empty}
+\vspace*{18pt}
+\begin{center}
+  \textsc{\Large{\doctitle}}\\[18pt]
+  by\\[18pt]
+  \textsc{\Large\docauthor}\\[12pt]
+  (Under the Direction of [Prof's Name] (No Dr. or PhD))\\[12pt]
+  \textsc{Abstract}
+\end{center}
+
+#1
+
+\thispagestyle{empty}
+
+\begin{list}{\textsc{Index words:\hfill}}{\labelwidth 1.2in\leftmargin 1.4in\labelsep 0.2in}
+  \item \begin{flushleft}
+    [PUT YOUR LIST OF INDEX WORDS HERE SEPERATED BY COMMAS]
+  \end{flushleft}
+\end{list}
+\endgroup}

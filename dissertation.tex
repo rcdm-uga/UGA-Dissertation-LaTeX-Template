@@ -7,79 +7,47 @@
 \input{metafiles/preamble.tex}
 \input{metafiles/booleans.tex}
 \input{metafiles/structure.tex}
+\input{metafiles/titlepage.tex}
+\input{metafiles/abstractpage.tex}
+\input{metafiles/copyright.tex}
 
+% Document Structure Options =============================================== %
 \sidenotetrue
 %\sidenotefalse
-
 \figurestrue
 % \figuresfalse
-
 \tablestrue
 % \tablesfalse
 
-
+% Title and Author Settings ================================================ %
 \newcommand{\doctitle}{Your Dissertation Title Will Go Here}
 \newcommand{\docauthor}{Your Name Goes Here}
+
 
 \begin{document}
 
 %--------------------------ABSTRACT---------------------------%
-\newpage
-
-\thispagestyle{empty}
-\vspace*{18pt}
-\begin{center}
-  \textsc{\Large{\doctitle}}\\[18pt]
-  by\\[18pt]
-  \textsc{\Large\docauthor}\\[12pt]
-  (Under the Direction of [Prof's Name] (No Dr. or PhD))\\[12pt]
-  \textsc{Abstract}
-\end{center}
-
+\makeabstract{%
 This section of the page is where your abstract will go. Fill in this spot in the dissertation.tex file with your abstract. Doctoral 350 words max, 150 max for masters.
-
-\thispagestyle{empty}
-
-\begin{list}{\textsc{Index words:\hfill}}{\labelwidth 1.2in\leftmargin 1.4in\labelsep 0.2in}
-  \item \begin{flushleft}
-    [PUT YOUR LIST OF INDEX WORDS HERE SEPERATED BY COMMAS]
-  \end{flushleft}
-\end{list}
-
+}%
 
 %--------------------------TITLE PAGE---------------------------%
-\newpage
-\pagenumbering{roman}
-\thispagestyle{empty}
-\vspace*{18pt}
-\begin{center}
-  \textsc{\doctitle}\\[18pt]
-  by\\[12pt]
-  \textsc{\docauthor}\\[8pt]
-  B.S., University of Georgia, 2018\\
+\newcommand{\degreesearned}{%
+B.S., University of Georgia, 2018\\
   Enter only degrees already completed. Follow example above\\
   If degree was obtained outside of the US, the country \\
   of the school and date obtained will need to be provided.
+}%
 
-  \vfill
-  A [Dissertation or Thesis? (Pick One)] Submitted to the Graduate Faculty of the\\ University of Georgia in Partial Fulfillment of the Requirements for the Degree.\\ [18pt]
+\newcommand{\degreetype}{[Dissertation or Thesis]}
+\newcommand{\degreetitle}{[Doctor or Master]}
+\newcommand{\degreename}{[Degree Name]}
+\newcommand{\degreeyear}{2020}
 
-  \textsc{[Doctor or Master] of [Degree Name (Not Major)]}\\[24pt]
-  \textsc{Athens, Georgia}\\[18pt]
-  2019
-\end{center}
-
+\maketitlepage
 
 %--------------------------COPYRIGHT---------------------------%
-\newpage
-\thispagestyle{empty}
-\vspace*{6.6in}
-\begin{center}
-  \copyright 2019\\
-  \docauthor\\
-  All Rights Reserved
-\end{center}
-
+\makecopyright{2020}
 
 %--------------------------APPROVAL---------------------------%
 \newpage
@@ -144,6 +112,8 @@ This section of the page is where your abstract will go. Fill in this spot in th
 % ------------------------------------------------------------------------- %
 % ========================================================================= %
 
+
+%-----------------------APPENDICES----------------------------%
 \begin{appendices}
   \subfile{subfiles/appendices}
 \end{appendices}
