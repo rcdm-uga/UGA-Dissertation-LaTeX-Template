@@ -1,5 +1,9 @@
 <!-- TODO Update/revise this -->
 
+# Changelog
+
+2020/02/27 - Major restructuring of dissertation template file structure. Generally cleaning up organization and improving workflow. Please open an issue if any problems arise, or if there are conflicts that need to be addressed.
+
 # UGA-Dissertation-LaTeX-Template
 A dissertation template in LaTeX approved by the UGA Graduate School.
 
