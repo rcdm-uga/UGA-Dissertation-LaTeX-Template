@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 % arara: xelatex
 % arara: biber
 % arara: xelatex
@@ -62,105 +63,57 @@
 
 % Create a new boolean variable to toggle between footnotes and sidenotes
 \newif\ifsidenote
+=======
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex
+% arara: pdflatex
+
+\documentclass[12pt, notitlepage, twoside]{report}
+\input{metafiles/preamble.tex}
+\input{metafiles/booleans.tex}
+\input{metafiles/structure.tex}
+\input{metafiles/titlepage.tex}
+\input{metafiles/abstractpage.tex}
+\input{metafiles/copyright.tex}
+
+% Document Structure Options =============================================== %
+>>>>>>> bugfix
 \sidenotetrue
 %\sidenotefalse
-
-% If you want sidenotes, we'll load some additional packages. Nothing for you to worry about.
-\ifsidenote
-  \usepackage{marginfix}
-  \usepackage{sidenotes}
-  \usepackage{ragged2e} % A better version of \raggedright and will prevent overly short lines in sidenotes: https://texfaq.org/FAQ-ragright
-  \renewcommand{\footnote}[1]{\sidenote{\RaggedRight\footnotesize #1}}
-  \renewcommand{\footnotetext}[1]{\sidenotetext{\raggedright\footnotesize #1}}
-\fi
-
-
-\addbibresource{dissertation.bib}
-
-\chapterfont{\centering\normalfont\nohang\textsc} %Centering Chapter Headers
+\figurestrue
+% \figuresfalse
+\tablestrue
+% \tablesfalse
 
 \begin{document}
 
-%These will be predefined because the title and author are referenced numerous
-%times through out the document, so it is easiest to define them here. That way
-% if you change either of them, it will update throughout the document.
-
+% Title and Author Settings ================================================ %
 \newcommand{\doctitle}{Your Dissertation Title Will Go Here}
 \newcommand{\docauthor}{Your Name Goes Here}
 
 
-%---------------WHAT TO CHANGE IN THIS FILE -------------------%
-%There are only a few places that you should touch in this dissertation.tex file.
-%The preamble
-%Setting the geometry parameters
-%Setting your Title and Name  right above
-%Adding your Major Professor's name to the abstract page
-%Your ABSTRACT and the list of index words
-%The List of degrees already completed on title page
-%Pick the appropriate words at the bottom of the title page
-%Update Committe and Date on Approval page
-
-%Everything else should be done in the other .tex files.
-
-
 %--------------------------ABSTRACT---------------------------%
-
-\newpage
-
-\thispagestyle{empty}
-\vspace*{18pt}
-\begin{center}
-  \textsc{\Large{\doctitle}}\\[18pt]  % A little larger than the original template
-  by\\[18pt]
-  \textsc{\Large\docauthor}\\[12pt]
-  (Under the Direction of [Prof's Name] (No Dr. or PhD))\\[12pt]
-  \textsc{Abstract}
-\end{center}
-
-This section of the page is where your abstract will go. Fill in this spot in the dissertation.tex file with your abstract. Doctorial 350 words max, 150 max for masters.
-
-\thispagestyle{empty}
-
-\begin{list}{\textsc{Index words:\hfill}}{\labelwidth 1.2in\leftmargin 1.4in\labelsep 0.2in}
-  \item \begin{flushleft}
-    [PUT YOUR LIST OF INDEX WORDS HERE SEPERATED BY COMMAS]
-  \end{flushleft}
-\end{list}
-
+\makeabstract{%
+This section of the page is where your abstract will go. Fill in this spot in the dissertation.tex file with your abstract. Doctoral 350 words max, 150 max for masters.
+}%
 
 %--------------------------TITLE PAGE---------------------------%
-\newpage
-\pagenumbering{roman}
-\thispagestyle{empty}
-\vspace*{18pt}
-\begin{center}
-  \textsc{\doctitle}\\[18pt]
-  by\\[12pt]
-  \textsc{\docauthor}\\[8pt]
-  B.S., University of Georgia, 2018\\
+\newcommand{\degreesearned}{%
+B.S., University of Georgia, 2018\\
   Enter only degrees already completed. Follow example above\\
   If degree was obtained outside of the US, the country \\
   of the school and date obtained will need to be provided.
+}%
 
-  \vfill
-  A [Dissertation or Thesis? (Pick One)] Submitted to the Graduate Faculty of the\\ University of Georgia in Partial Fulfillment of the Requirements for the Degree.\\ [18pt]
-
-  \textsc{[Doctor or Master] of [Degree Name (Not Major)]}\\[24pt]
-  \textsc{Athens, Georgia}\\[18pt]
-  2019
-\end{center}
-
-
+\newcommand{\degreetype}{[Dissertation or Thesis]}
+\newcommand{\degreetitle}{[Doctor or Master]}
+\newcommand{\degreename}{[Degree Name]}
+\newcommand{\degreeyear}{2020}
+\maketitlepage
 
 %--------------------------COPYRIGHT---------------------------%
-\newpage
-\thispagestyle{empty}
-\vspace*{6.6in}
-\begin{center}
-  \copyright 2019\\
-  \docauthor\\
-  All Rights Reserved
-\end{center}
+\makecopyright{2020}
 
 %--------------------------APPROVAL---------------------------%
 \newpage
@@ -193,59 +146,42 @@ This section of the page is where your abstract will go. Fill in this spot in th
 \end{flushleft}
 \vspace*{1.5cm}
 
+% Dedication ============================================================== %
+\subfile{subfiles/dedication}
 
+% Acknowledgements ======================================================== %
+\subfile{subfiles/acknowledgements}
 
-
-\subfile{dedication}
-\subfile{acknowledgements}
-
+% Table of Contents ======================================================= %
 \tableofcontents
 
-%If there is no figures or tables, then remove the corresponding command to
-%delete the page from the pdf.
+\iffigures
 \addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
-\addcontentsline{toc}{chapter}{\listtablename}
-\listoftables
-\clearpage
-
-\pagenumbering{arabic}
-
-
-% If you want SIDENOTES instead of footnotes
-\ifsidenote
-
-  % We'll now switch to the sidenote layout.
-  \newgeometry{
-    height = 11in,
-    width = 8.5in,
-    includemp = true,
-    top = 1in,
-    bottom = 1.25in,
-    bindingoffset = 0.25in,
-    inner = 1in,
-    marginparsep = 0.125in,
-    marginparwidth = 1.5in,
-    outer = 0.75in
-  }
-
-  % The footnote command now produces sidenotes.
-  \renewcommand{\footnote}[1]{\sidenote{\RaggedRight\footnotesize #1}}
-  \renewcommand{\footnotetext}[1]{\sidenotetext{\raggedright\footnotesize #1}}
-
-% If you want FOOTNOTES instead of sidenotes.
-\else
-  % Do nothing. We're all good.
 \fi
 
-\subfile{chapter1}
-\subfile{chapter2}
-\subfile{chapter3}
-\subfile{chapter4}
-\subfile{conclusion}
+\iftables
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+\fi
 
+\clearpage
+\pagenumbering{arabic}
+
+% Document Body =========================================================== %
+% ------------------------------------------------------------------------- %
+\subfile{subfiles/chapter1}
+\subfile{subfiles/chapter2}
+\subfile{subfiles/chapter3}
+\subfile{subfiles/chapter4}
+\subfile{subfiles/conclusion}
+% ------------------------------------------------------------------------- %
+% ========================================================================= %
+
+
+%-----------------------APPENDICES----------------------------%
 \begin{appendices}
-  \subfile{appendices}
+  \subfile{subfiles/appendices}
 \end{appendices}
 
 %-----------------------BIBLIOGRAPHY---------------------------%

@@ -1,3 +1,5 @@
+<!-- TODO Update/revise this -->
+
 # UGA-Dissertation-LaTeX-Template
 A dissertation template in LaTeX approved by the UGA Graduate School.
 
@@ -42,7 +44,7 @@ Regardless, you will have to compile 4 times to get all the citations and refere
   1. dissertation.tex
   2. dissertation.bib
   3. dissertation.tex
-  4. dissertation.tex 
+  4. dissertation.tex
 
 
 ## [Sample Pages](/images/sample_pages.pdf)
