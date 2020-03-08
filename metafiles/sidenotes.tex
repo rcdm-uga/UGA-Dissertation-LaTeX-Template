@@ -1,0 +1,30 @@
+
+\ifsidenote
+  \usepackage{marginfix}
+  \usepackage{sidenotes}
+  \usepackage{ragged2e} % A better version of \raggedright and will prevent overly short lines in sidenotes: https://texfaq.org/FAQ-ragright
+  \renewcommand{\footnote}[1]{\sidenote{\RaggedRight\footnotesize #1}}
+  \renewcommand{\footnotetext}[1]{\sidenotetext{\raggedright\footnotesize #1}}
+\fi
+
+\ifsidenote
+  % We'll now switch to the sidenote layout.
+  \newgeometry{
+    height = 11in,
+    width = 8.5in,
+    includemp = true,
+    top = 1in,
+    bottom = 1.25in,
+    bindingoffset = 0.25in,
+    inner = 1in,
+    marginparsep = 0.125in,
+    marginparwidth = 1.5in,
+    outer = 0.75in
+  }
+
+  \renewcommand{\footnote}[1]{\sidenote{\RaggedRight\footnotesize #1}}
+  \renewcommand{\footnotetext}[1]{\sidenotetext{\raggedright\footnotesize #1}}
+% If you want FOOTNOTES instead of sidenotes.
+\else
+  % Do nothing. We're all good.
+\fi

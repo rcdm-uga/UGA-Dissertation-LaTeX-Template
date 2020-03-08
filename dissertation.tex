@@ -4,12 +4,12 @@
 % arara: pdflatex
 
 \documentclass[12pt, notitlepage, twoside]{report}
+
+% Document Metafiles (Do Not Reorder!) ===================================== %
 \input{metafiles/preamble.tex}
 \input{metafiles/booleans.tex}
 \input{metafiles/structure.tex}
-\input{metafiles/titlepage.tex}
-\input{metafiles/abstractpage.tex}
-\input{metafiles/copyright.tex}
+
 
 % Document Structure Options =============================================== %
 \sidenotetrue
@@ -19,7 +19,12 @@
 \tablestrue
 % \tablesfalse
 
+% If you want sidenotes, we'll load some additional packages. Nothing for you to worry about.
+\input{metafiles/sidenotes.tex}
+
 \begin{document}
+
+
 
 % Title and Author Settings ================================================ %
 \newcommand{\doctitle}{Your Dissertation Title Will Go Here}
@@ -27,11 +32,14 @@
 
 
 %--------------------------ABSTRACT---------------------------%
+\input{metafiles/abstractpage.tex}
 \makeabstract{%
 This section of the page is where your abstract will go. Fill in this spot in the dissertation.tex file with your abstract. Doctoral 350 words max, 150 max for masters.
 }%
 
+
 %--------------------------TITLE PAGE---------------------------%
+\input{metafiles/titlepage.tex}
 \newcommand{\degreesearned}{%
 B.S., University of Georgia, 2018\\
   Enter only degrees already completed. Follow example above\\
@@ -45,8 +53,11 @@ B.S., University of Georgia, 2018\\
 \newcommand{\degreeyear}{2020}
 \maketitlepage
 
+
 %--------------------------COPYRIGHT---------------------------%
+\input{metafiles/copyright.tex}
 \makecopyright{2020}
+
 
 %--------------------------APPROVAL---------------------------%
 \newpage
