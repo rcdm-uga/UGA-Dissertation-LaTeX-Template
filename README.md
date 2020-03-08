@@ -2,6 +2,8 @@
 
 # Changelog
 
+2020/03/07 - Bugfix: Sidenotes module not enabling when the "\sidenotetrue" flag is set. This should be working now.
+
 2020/02/27 - Major restructuring of dissertation template file structure. Generally cleaning up organization and improving workflow. Please open an issue if any problems arise, or if there are conflicts that need to be addressed.
 
 # UGA-Dissertation-LaTeX-Template
