@@ -65,3 +65,8 @@ This pdf contains about a dozen pages from an actual UGA dissertation which impl
    * Finally, the last page is a sample bibliography. Note that this was automatically generated in LaTeX.
 
 Note that these sample pages implement design choices that have not yet been implemented in this template, such as font choices, page margins, line height, and other typographical elements.
+
+## Tutorials
+LaTeX tutorials from the Digital Humanities Lab are available at the links below:
+* [Introduction to LaTeX](https://dhlvideo.libs.uga.edu/tutorials/latex1.mp4) - An introduction to LaTeX syntax and logic, and how best to use it
+* 
