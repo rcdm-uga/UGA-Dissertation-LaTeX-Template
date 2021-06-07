@@ -69,4 +69,5 @@ Note that these sample pages implement design choices that have not yet been imp
 ## Tutorials
 LaTeX tutorials from the Digital Humanities Lab are available at the links below:
 * [Introduction to LaTeX](https://dhlvideo.libs.uga.edu/tutorials/latex1.mp4) - An introduction to LaTeX syntax and logic, and how best to use it
-* 
+* [The UGA LaTeX Template](https://dhlvideo.libs.uga.edu/tutorials/latex_template.mp4) - How to apply the UGA LaTeX template to your thesis or dissertation
+* [Advanced Topics in LaTeX](https://dhlvideo.libs.uga.edu/tutorials/advanced_latex.mp4) - Customize and use LaTeX for your own discipline
